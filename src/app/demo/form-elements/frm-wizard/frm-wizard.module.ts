@@ -1,10 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatTabsModule} from '@angular/material/tabs';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { FrmWizardRoutingModule } from './frm-wizard-routing.module';
-import { FrmWizardComponent } from './frm-wizard.component';
+import {FrmWizardRoutingModule} from './frm-wizard-routing.module';
+import {FrmWizardComponent} from './frm-wizard.component';
 import {SharedModule} from '../../../theme/shared/shared.module';
 import {ArchwizardModule} from 'ng2-archwizard/dist';
 import {WizardBasicComponent} from './wizard-basic/wizard-basic.component';
@@ -13,6 +11,8 @@ import {WizardNavbarLgIconComponent} from './wizard-navbar-lg-icon/wizard-navbar
 import {WizardCustomComponent} from './wizard-custom/wizard-custom.component';
 import {WizardNavbarLeftComponent} from './wizard-navbar-left/wizard-navbar-left.component';
 import {WizardNavbarRightComponent} from './wizard-navbar-right/wizard-navbar-right.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgbButtonsModule, NgbDatepickerModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -20,7 +20,10 @@ import {WizardNavbarRightComponent} from './wizard-navbar-right/wizard-navbar-ri
     FrmWizardRoutingModule,
     SharedModule,
     ArchwizardModule,
-    MatTabsModule
+    NgbButtonsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbDatepickerModule
   ],
   declarations: [
     FrmWizardComponent,

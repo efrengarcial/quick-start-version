@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WizardNavbarLeftComponent implements OnInit {
 
-  constructor() { }
+  public radioButtons: string;
+  public showResult = false;
+  constructor() {
+    this.radioButtons = '1';
+  }
 
   ngOnInit() {
   }
 
+  calculate() {
+    this.showResult = true;
+  }
 }
