@@ -10,12 +10,16 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'signin',
+        redirectTo: 'auth/signin',
         pathMatch: 'full'
       },
       {
-        path: 'signin',
+        path: 'auth/signin',
         loadChildren: './demo/authentication/auth-signin/auth-signin.module#AuthSigninModule'
+      },
+      {
+        path: 'auth/signup',
+        loadChildren: './demo/authentication/auth-signup/auth-signup.module#AuthSignupModule'
       }
     ]
   },

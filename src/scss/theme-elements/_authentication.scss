@@ -61,6 +61,17 @@
             width: 750px;
         }
     }
+
+  .auth-content-jt {
+    position: relative;
+    width: 800px;
+    padding: 15px;
+
+    &.multyform,
+    &.subscribe {
+      width: 750px;
+    }
+  }
     @media only screen and (max-width: 768px) {
         max-width: 360px;
 
