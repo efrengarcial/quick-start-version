@@ -46,7 +46,51 @@ const NavigationItems = [
     type: 'item',
     url: '/forms/wizard',
     classes: 'nav-item',
-    icon: 'feather icon-shopping-cart'
+    icon: 'feather icon-package'
+  },
+  {
+    id: 'configuration',
+    title: 'Configuración',
+    type: 'collapse',
+    icon: 'feather icon-settings',
+    children: [
+      {
+        id: 'canastillas',
+        title: 'Canastillas',
+        type: 'item',
+        url: '/dashboard/e-commerce'
+      },
+      {
+        id: 'listadeprecios',
+        title: 'Lista de Precios',
+        type: 'item',
+        url: '/dashboard/e-commerce'
+      },
+      {
+        id: 'mediosdepago',
+        title: 'Medios de Pago',
+        type: 'item',
+        url: '/dashboard/e-commerce'
+      },
+      {
+        id: 'notificaciones',
+        title: 'Notificaciones',
+        type: 'item',
+        url: '/dashboard/e-commerce'
+      },
+      {
+        id: 'clientes',
+        title: 'Clientes',
+        type: 'item',
+        url: '/dashboard/e-commerce'
+      },
+      {
+        id: 'personal',
+        title: 'Personal',
+        type: 'item',
+        url: '/dashboard/e-commerce'
+      }
+      ]
   }
 ];
 

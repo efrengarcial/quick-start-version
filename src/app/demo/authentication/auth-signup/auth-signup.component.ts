@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IOption} from 'ng-select';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-auth-signup',
@@ -15,7 +16,7 @@ export class AuthSignupComponent implements OnInit {
     {value: '4', label: 'Fríos y Congelados'}
     ];
   customerType: string = null;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,4 +25,7 @@ export class AuthSignupComponent implements OnInit {
     console.log(value);
   }
 
+  signUp() {
+    this.router.navigate(['/dashboard/e-commerce']);
+  }
 }

@@ -51,7 +51,7 @@
       </div>
     </div>
   </li>
-  <li (click)="this.visibleUserList = !this.visibleUserList;"><a href="javascript:" class="displayChatbox"><i class="icon feather icon-mail"></i></a></li>
+
   <li>
     <div class="dropdown drp-user" ngbDropdown [placement]="['bottom-left', 'bottom-right']">
       <a href="javascript:" ngbDropdownToggle data-toggle="dropdown">
@@ -61,7 +61,7 @@
         <div class="pro-head">
           <img src="assets/images/user/avatar-2.jpg" class="img-radius" alt="User-Profile-Image">
           <span>Carlos Imbacuan</span>
-          <a href="javascript:" class="dud-logout" title="Logout">
+          <a routerLink="" (click)="logout()" class="dud-logout" title="Logout">
             <i class="feather icon-log-out"></i>
           </a>
         </div>

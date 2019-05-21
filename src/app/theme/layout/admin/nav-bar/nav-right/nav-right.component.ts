@@ -2,6 +2,7 @@ import {Component, DoCheck, OnInit} from '@angular/core';
 import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {DattaConfig} from '../../../../../app-config';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-nav-right',
@@ -35,7 +36,7 @@ export class NavRightComponent implements OnInit, DoCheck {
   public friendId: boolean;
   public dattaConfig: any;
 
-  constructor(config: NgbDropdownConfig) {
+  constructor(config: NgbDropdownConfig, private router: Router) {
     config.placement = 'bottom-right';
     this.visibleUserList = false;
     this.chatMessage = false;
@@ -56,5 +57,9 @@ export class NavRightComponent implements OnInit, DoCheck {
     } else {
       this.dattaConfig['rtl-layout'] = false;
     }
+  }
+
+  logout() {
+    this.router.navigate(['/']);
   }
 }

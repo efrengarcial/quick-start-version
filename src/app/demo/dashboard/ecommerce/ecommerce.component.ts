@@ -46,7 +46,7 @@ export class EcommerceComponent implements OnInit {
           'fillColors': ['#1de9b6', '#1dc4e9'],
           'fillAlphas': 1,
           'type': 'column',
-          'title': 'Last Week ',
+          'title': 'ARKA 13 ',
           'valueField': 'sales2',
           'columnWidth': 0.2,
           'legendValueText': '$[[value]]M',
@@ -58,12 +58,25 @@ export class EcommerceComponent implements OnInit {
           'fillColors': ['#a389d4', '#899ed4'],
           'fillAlphas': 1,
           'type': 'column',
-          'title': 'Market Place ',
+          'title': 'ARKA 18 ',
           'valueField': 'sales1',
           'columnWidth': 0.2,
           'legendValueText': '$[[value]]M',
           'balloonText': '[[title]]<br /><b style="font-size: 130%">$[[value]]M</b>'
-        }],
+        },
+           {
+            'id': 'g3',
+            'valueAxis': 'v1',
+            'lineColor': ['#a389d4', '#899ed4'],
+            'fillColors': ['#E0FF33', '#A8FF33'],
+            'fillAlphas': 1,
+            'type': 'column',
+            'title': 'ARKA 25 ',
+            'valueField': 'sales3',
+            'columnWidth': 0.2,
+            'legendValueText': '$[[value]]M',
+            'balloonText': '[[title]]<br /><b style="font-size: 130%">$[[value]]M</b>'
+          }],
         'chartCursor': {
           'pan': true,
           'valueLineEnabled': true,
@@ -90,19 +103,23 @@ export class EcommerceComponent implements OnInit {
         'dataProvider': [{
           'date': 'Q1',
           'sales1': 4.5,
-          'sales2': 5.5
+          'sales2': 5.5,
+          'sales3': 7.5
         }, {
           'date': 'Q2',
           'sales1': 5,
-          'sales2': 6.5
+          'sales2': 6.5,
+          'sales3': 8
         }, {
           'date': 'Q3',
           'sales1': 6.5,
-          'sales2': 5.5
+          'sales2': 5.5,
+          'sales3': 9
         }, {
           'date': 'Q4',
           'sales1': 6,
-          'sales2': 7
+          'sales2': 7,
+          'sales3': 4
         }]
       });
 

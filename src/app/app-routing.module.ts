@@ -20,6 +20,10 @@ const routes: Routes = [
       {
         path: 'auth/signup',
         loadChildren: './demo/authentication/auth-signup/auth-signup.module#AuthSignupModule'
+      },
+      {
+        path: 'auth/reset-password',
+        loadChildren: './demo/authentication/auth-reset-password/auth-reset-password.module#AuthResetPasswordModule'
       }
     ]
   },
