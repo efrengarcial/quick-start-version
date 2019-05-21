@@ -42,7 +42,7 @@ const NavigationItems = [
   },
   {
     id: 'purchase-order',
-    title: 'Orden de Compra',
+    title: 'Orden de Pedido',
     type: 'item',
     url: '/forms/wizard',
     classes: 'nav-item',

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { FrmWizardRoutingModule } from './frm-wizard-routing.module';
 import { FrmWizardComponent } from './frm-wizard.component';
@@ -17,7 +19,8 @@ import {WizardNavbarRightComponent} from './wizard-navbar-right/wizard-navbar-ri
     CommonModule,
     FrmWizardRoutingModule,
     SharedModule,
-    ArchwizardModule
+    ArchwizardModule,
+    MatTabsModule
   ],
   declarations: [
     FrmWizardComponent,

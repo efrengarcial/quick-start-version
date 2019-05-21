@@ -9,7 +9,7 @@
     <div class="card">
       <div class="card-body">
         <div class="mb-4 text-center">
-          <i class="feather icon-user-plus auth-icon"></i>
+          <img src="assets/images/user/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
         </div>
         <h3 class="mb-4 text-center">Nuevo Cliente</h3>
         <h5 class="mt-5">Datos Básicos</h5>
@@ -18,11 +18,11 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="input1">Nombres</label>
-              <input type="email" class="form-control" id="input1" placeholder="Pedro">
+              <input type="text" class="form-control" id="input1" placeholder="Pedro">
             </div>
             <div class="form-group col-md-6">
               <label for="input2">Apellidos</label>
-              <input type="email" class="form-control" id="input2" placeholder="Perez">
+              <input type="text" class="form-control" id="input2" placeholder="Perez">
             </div>
           </div>
 
@@ -46,12 +46,12 @@
 
           <div class="form-group">
             <label for="inputAddress">Dirección</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="K 53F # 12 3 ">
+            <input type="text" class="form-control" id="inputAddress" placeholder="CALLE 1 # 23 45 ">
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="input3">Ciudad</label>
-              <input type="email" class="form-control" id="input3" placeholder="Barranquilla">
+              <label for="input3">Departamento/Municipio</label>
+              <input type="text" class="form-control" id="input3" placeholder="SOLEDAD">
             </div>
             <div class="form-group col-md-6">
               <label for="input4">Email</label>
@@ -61,16 +61,56 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="input5">Teléfono Fijo</label>
-              <input type="email" class="form-control" id="input5" placeholder="Barranquilla">
+              <input type="text" class="form-control" id="input5" placeholder="0-000-000">
             </div>
             <div class="form-group col-md-6">
               <label for="input6">Teléfono Móvil</label>
-              <input type="email" class="form-control" id="input6" placeholder="micorreo@gmail.com">
+              <input type="text" class="form-control" id="input6" placeholder="000-000-0000">
             </div>
           </div>
         </form>
-        <h5 class="mt-5">Información Economica</h5>
+        <h5 class="mt-5">Información Económica</h5>
         <hr>
+        <div class="form-row">
+
+          <div class="form-group col-md-6">
+            <label for="inputState">Tipo de Persona</label>
+            <select id="inputState1" class="form-control">
+              <option selected>Seleccione</option>
+              <option>NATURAL</option>
+              <option>JURÍDICA</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputState">Tipo de Cliente</label>
+            <select id="inputState3" class="form-control" [(ngModel)]="customerType"   #ctrl="ngModel" (change)="onChange($event.target.value)">
+              <option value="null">Seleccione</option>
+              <option value='1'>AGRICULTOR</option>
+              <option value='2'>ACOPIADOR</option>
+              <option value='3'>RETAIL</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputState4">Productos</label>
+          <ng-select id="inputState4" [ngClass]="'ng-select'" [options]="simpleOption" [multiple]="true"></ng-select>
+        </div>
+        <div class="form-row" *ngIf="customerType === '1'" >
+          <div class="form-group col-md-6">
+            <label for="input31">Número de Hectárias</label>
+            <input type="number" class="form-control" id="input31" placeholder="1">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="input41">Fechas de Cosecha</label>
+            <input type="text" class="form-control" id="input41" placeholder="01-01-2019 - 15-06-2019">
+          </div>
+        </div>
+        <div class="form-row" >
+          <div class="form-group col-md-6">
+            <label for="input32">Ciudad de Acopio</label>
+            <input type="number" class="form-control" id="input32" placeholder="BARRANQUILLA">
+          </div>
+        </div>
         <div class="form-group text-center">
           <button class="btn btn-primary shadow-2 mb-4">Sign up</button>
           <p class="mb-0 text-muted">Already have an account? <a [routerLink]="['/auth/signin']"> Log in</a></p>
