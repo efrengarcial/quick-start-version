@@ -8,6 +8,10 @@ const routes: Routes = [
       {
         path: 'wizard',
         loadChildren: './frm-wizard/frm-wizard.module#FrmWizardModule'
+      },
+      {
+        path: 'tracking',
+        loadChildren: './basic-elements/basic-elements.module#BasicElementsModule'
       }
     ]
   }
