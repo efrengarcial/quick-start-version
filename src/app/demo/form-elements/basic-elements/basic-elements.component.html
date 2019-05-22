@@ -2,80 +2,198 @@
   <div class="col-sm-12">
     <div class="card">
       <div class="card-body">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Orden de Pedido/ Número de Canastilla">
+              <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" (click)="search()">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="switch d-inline m-r-10">
+                <input type="checkbox" id="switch-1" checked [(ngModel)] = "tabular">
+                <label for="switch-1" class="cr"></label>
+              </div>
+              <label>Tabular</label>
+            </div>
+          </div>
+        </div>
         <hr>
-        <section id="cd-timeline" class="cd-container">
+        <div class="table-responsive" *ngIf="show1">
+          <table class="table ">
+            <thead class="table-primary">
+            <tr>
+              <th>Responsable</th>
+              <th>Punto de Lectura</th>
+              <th>Fecha</th>
+              <th>Sentido</th>
+              <th>Destino</th>
+              <th>Producto</th>
+              <th>Peso</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Colcanastas</td>
+              <td>CEDI BOGOTA</td>
+              <td>03/05/2019</td>
+              <td>SALE</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Colcanastas</td>
+              <td>CEDI PROPIO BOGOTA</td>
+              <td>04/05/2019</td>
+              <td>ENTRA</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Productor</td>
+              <td>CEDI PROPIO BOGOTA</td>
+              <td>06/05/2019</td>
+              <td>SALE</td>
+              <td>Productor</td>
+              <td>Naranja</td>
+              <td>1200Kg</td>
+            </tr>
+            <tr class="table-warning">
+              <td>Olimpica</td>
+              <td>CEDI OLIMPICA BARRANQUILLA</td>
+              <td>08/05/2019</td>
+              <td>ENTRA</td>
+              <td>Olimpica</td>
+              <td>Naranja</td>
+              <td>1000Kg</td>
+            </tr>
+            <tr>
+              <td>Olimpica</td>
+              <td>CEDI OLIMPICA BARRANQUILLA</td>
+              <td>09/05/2019</td>
+              <td>SALE</td>
+              <td>Tienda Unico Olimpica</td>
+              <td>Naranja</td>
+              <td>200Kg</td>
+            </tr>
+            <tr>
+              <td>Olimpica</td>
+              <td>CEDI OLIMPICA BARRANQUILLA</td>
+              <td>09/05/2019</td>
+              <td>SALE</td>
+              <td>Tienda Norte</td>
+              <td>Naranja</td>
+              <td>300Kg</td>
+            </tr>
+            <tr>
+              <td>Olimpica</td>
+              <td>CEDI OLIMPICA BARRANQUILLA</td>
+              <td>09/05/2019</td>
+              <td>ENTRA</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <section class="timeline" *ngIf="show2">
+          <div class="container">
+            <div class="timeline-item">
+              <div class="timeline-img"></div>
 
-          <div class="cd-timeline-block">
-            <div class="cd-timeline-img cd-picture">
-              <img src="assets/images/building.png" />
-            </div> <!-- cd-timeline-img -->
+              <div class="timeline-content js--fadeInLeft">
+                <h3>CEDI BOGOTÁ</h3>
+                <div class="date">3 MAYO 2019</div>
+                <p><span class="badge m-r-5 badge-warning">SALE</span></p>
+                <p>Responsable: Colcanastas</p>
+              </div>
+            </div>
 
-            <div class="cd-timeline-content">
-              <h2>CEDI BOGOTÁ</h2>
-              <p><span class="badge m-r-5 badge-warning">SALE</span></p>
-              <p>Responsable: Colcanastas</p>
-              <span class="cd-date">Mayo 3 2019</span>
-            </div> <!-- cd-timeline-content -->
-          </div> <!-- cd-timeline-block -->
+            <div class="timeline-item">
 
-          <div class="cd-timeline-block">
-            <div class="cd-timeline-img cd-movie">
-              <img src="assets/images/building.png" />
-            </div> <!-- cd-timeline-img -->
+              <div class="timeline-img"></div>
 
-            <div class="cd-timeline-content">
-              <h2>CEDI PROPIO BOGOTÁ</h2>
-              <p><span class="badge m-r-5 badge-success">ENTRA</span></p>
-              <p>Responsable: Colcanastas</p>
-              <span class="cd-date">Mayo 4 2019</span>
-            </div> <!-- cd-timeline-content -->
-          </div> <!-- cd-timeline-block -->
+              <div class="timeline-content js--fadeInRight">
+                <h3>CEDI PROPIO BOGOTÁ</h3>
+                <div class="date">4 MAYO 2019</div>
+                <p><span class="badge m-r-5 badge-success">ENTRA</span></p>
+                <p>Responsable: Colcanastas</p>
+              </div>
 
-          <div class="cd-timeline-block">
-            <div class="cd-timeline-img cd-picture">
-              <img src="assets/images/building.png" />
-            </div> <!-- cd-timeline-img -->
+            </div>
 
-            <div class="cd-timeline-content">
-              <h2>CEDI PROPIO BOGOTÁ</h2>
-              <p><span class="badge m-r-5 badge-warning">SALE</span></p>
-              <p>Responsable: Productor</p>
-              <p>Destino: Productor, Producto: Naranja 1200Kg</p>
-              <span class="cd-date">Mayo 6 2019</span>
-            </div> <!-- cd-timeline-content -->
-          </div> <!-- cd-timeline-block -->
+            <div class="timeline-item">
+              <div class="timeline-img"></div>
 
-          <div class="cd-timeline-block">
-            <div class="cd-timeline-img cd-movie">
-              <img src="assets/images/building.png" />
-            </div> <!-- cd-timeline-img -->
+              <div class="timeline-content js--fadeInLeft">
+                <h3>CEDI PROPIO BOGOTÁ</h3>
+                <div class="date">6 MAYO 2019</div>
+                <p><span class="badge m-r-5 badge-warning">SALE</span></p>
+                <p>Responsable: Productor</p>
+                <p>Destino: Productor, Producto: Naranja 1200Kg</p>
+              </div>
+            </div>
 
-            <div class="cd-timeline-content">
-              <h2>CEDI OLIMPICA BARRANQUILLA</h2>
-              <p><span class="badge m-r-5 badge-success">ENTRA</span></p>
-              <p>Responsable: Olimpica</p>
-              <p>Destino: Olimpica, Producto: Naranja 1000Kg</p>
-              <span class="cd-date">Mayo 8 2019</span>
-            </div> <!-- cd-timeline-content -->
-          </div> <!-- cd-timeline-block -->
+            <div class="timeline-item">
 
-          <div class="cd-timeline-block">
-            <div class="cd-timeline-img cd-picture">
-              <img src="assets/images/building.png" />
-            </div> <!-- cd-timeline-img -->
+              <div class="timeline-img"></div>
 
-            <div class="cd-timeline-content">
-              <h2>CEDI OLIMPICA BARRANQUILLA</h2>
-              <p><span class="badge m-r-5 badge-warning">SALE</span></p>
-              <p>Responsable: Olimpica</p>
-              <p>Destino: Tienda Unico Olimpica, Producto: Naranja 200Kg</p>
-              <span class="cd-date">Mayo 9 2019</span>
-            </div> <!-- cd-timeline-content -->
-          </div> <!-- cd-timeline-block -->
+              <div class="timeline-content js--fadeInRight">
+                <h3>CEDI OLIMPICA BARRANQUILLA</h3>
+                <div class="date">8 MAYO 2019</div>
+                <p><span class="badge m-r-5 badge-success">ENTRA</span></p>
+                <p>Responsable: Olimpica</p>
+                <p>Destino: Olimpica, Producto: Naranja 1000Kg</p>
+              </div>
+
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-img"></div>
+
+              <div class="timeline-content js--fadeInLeft">
+                <h3>CEDI OLIMPICA BARRANQUILLA</h3>
+                <div class="date">9 MAYO 2019</div>
+                <p><span class="badge m-r-5 badge-warning">SALE</span></p>
+                <p>Responsable: Olimpica</p>
+                <p>Destino: Tienda Unico Olimpica, Producto: Naranja 200Kg</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-img"></div>
+
+              <div class="timeline-content js--fadeInLeft">
+                <h3>CEDI OLIMPICA BARRANQUILLA</h3>
+                <div class="date">9 MAYO 2019</div>
+                <p><span class="badge m-r-5 badge-warning">SALE</span></p>
+                <p>Responsable: Olimpica</p>
+                <p>Destino: Tienda Norte Olimpica, Producto: Naranja 300Kg</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+
+              <div class="timeline-img"></div>
+
+              <div class="timeline-content js--fadeInRight">
+                <h3>CEDI OLIMPICA BARRANQUILLA</h3>
+                <div class="date">9 MAYO 2019</div>
+                <p><span class="badge m-r-5 badge-success">ENTRA</span></p>
+                <p>Responsable: Olimpica</p>
+              </div>
+
+            </div>
 
 
-
-        </section> <!-- cd-timeline -->
+          </div>
+        </section>
       </div>
     </div>
   </div>
